@@ -9,13 +9,73 @@
 
 
     <TextView
+        android:id="@+id/tv_no_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="hello world"
+        android:text="01. 주변 사람들은 나를 골초라고 여긴다."
+        android:layout_margin=""
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
+    </TextView>
+
+
+    <RadioGroup
+        android:id="@+id/rdg_01"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_01"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_01">
+
+        <RadioButton
+            android:id="@+id/rd_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇지 않다"
+            android:textSize="10sp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇지 않다."
+            android:textSize="10sp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통이다"
+            android:textSize="10sp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇다"
+            android:textSize="10sp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇다"
+            android:textSize="10sp">
+        </RadioButton>
+    </RadioGroup>
+
+    <TextView
+        android:id="@+id/tv_no_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="02. 담배가 없으면 하루를 망친다."
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdg_01">
     </TextView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
