@@ -5,26 +5,31 @@
     android:id="@+id/main"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Evaluation">
-
+    tools:context=".Evaluation"
+    android:layout_marginTop="100dp"
+    android:layout_marginStart="8dp"
+    android:layout_marginEnd="8dp"
+    android:layout_marginBottom="30dp">
 
     <TextView
         android:id="@+id/tv_no_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="01. 주변 사람들은 나를 골초라고 여긴다."
-        android:layout_margin=""
+        android:text="1. 주변 사람들은 나를 골초라고 여긴다."
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintBottom_toBottomOf="parent">
+        android:background="#B6C3A2">
     </TextView>
 
-
     <RadioGroup
-        android:id="@+id/rdg_01"
+        android:id="@+id/rdg_tv_01"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
+        android:layout_marginTop="10dp"
         app:layout_constraintTop_toBottomOf="@+id/tv_no_01"
         app:layout_constraintStart_toStartOf="@+id/tv_no_01">
 
@@ -33,15 +38,25 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="매우 그렇지 않다"
-            android:textSize="10sp">
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
         </RadioButton>
 
         <RadioButton
             android:id="@+id/rd_02"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="그렇지 않다."
-            android:textSize="10sp">
+            android:text="그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
         </RadioButton>
 
         <RadioButton
@@ -49,7 +64,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="보통이다"
-            android:textSize="10sp">
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
         </RadioButton>
 
         <RadioButton
@@ -57,7 +77,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="그렇다"
-            android:textSize="10sp">
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
         </RadioButton>
 
         <RadioButton
@@ -65,17 +90,480 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="매우 그렇다"
-            android:textSize="10sp">
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
         </RadioButton>
     </RadioGroup>
 
+    <!-- 2번 -->
     <TextView
         android:id="@+id/tv_no_02"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:text="02. 담배가 없으면 하루를 망친다."
+        android:text="2. 담배가 없으면 하루를 망친다."
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/rdg_01">
+        app:layout_constraintTop_toBottomOf="@+id/rdg_tv_01"
+        android:background="#B6C3A2"
+        android:layout_marginTop="20dp">
     </TextView>
+
+    <RadioGroup
+        android:id="@+id/rdg_tv_02"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_02"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_02">
+
+        <RadioButton
+            android:id="@+id/rd_02_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_02_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_02_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통이다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_02_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_02_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+    </RadioGroup>
+
+
+    <!-- 3번 -->
+    <TextView
+        android:id="@+id/tv_no_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="3. 담배 때문에 다른 사람과 감정이 상한일이 있다."
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdg_tv_02"
+        android:background="#B6C3A2"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/rdg_tv_03"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_03"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_03">
+
+        <RadioButton
+            android:id="@+id/rd_03_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_03_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_03_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통이다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_03_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_03_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+    </RadioGroup>
+
+
+    <!-- 4번 -->
+    <TextView
+        android:id="@+id/tv_no_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="4. 담배로 스트레스를 푼다"
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdg_tv_03"
+        android:background="#B6C3A2"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/rdg_tv_04"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_04"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_04">
+
+        <RadioButton
+            android:id="@+id/rd_04_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_04_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_04_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통이다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_04_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_04_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+    </RadioGroup>
+
+
+    <!-- 5번 -->
+    <TextView
+        android:id="@+id/tv_no_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="5. 기분 전환을 위해 담배를 피운다."
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdg_tv_04"
+        android:background="#B6C3A2"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/rdg_tv_05"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_05"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_05">
+
+        <RadioButton
+            android:id="@+id/rd_05_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_05_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_05_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통이다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_05_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_05_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+    </RadioGroup>
+
+    <!-- 6번 -->
+    <TextView
+        android:id="@+id/tv_no_06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="6. 담배로 인해 몸이 불편해졌지만 계속 피운다."
+        android:textSize="17sp"
+        android:textColor="@color/black"
+        android:textStyle="bold"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/rdg_tv_05"
+        android:background="#B6C3A2"
+        android:layout_marginTop="20dp">
+    </TextView>
+
+    <RadioGroup
+        android:id="@+id/rdg_tv_06"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="10dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_no_06"
+        app:layout_constraintStart_toStartOf="@+id/tv_no_06">
+
+        <RadioButton
+            android:id="@+id/rd_06_01"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_06_02"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇지 않다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_06_03"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="보통이다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_06_04"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+
+        <RadioButton
+            android:id="@+id/rd_06_05"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="매우 그렇다"
+            android:textSize="10sp"
+            android:minWidth="0dp"
+            android:minHeight="0dp"
+            android:paddingStart="0dp"
+            android:paddingEnd="0dp"
+            android:drawablePadding="0dp">
+        </RadioButton>
+    </RadioGroup>
+
+    <Button
+        android:id="@+id/btn_save"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent"
+        android:background="@color/black"
+        android:textStyle="bold"
+        android:text="저장"
+        android:layout_marginBottom="20dp">
+    </Button>
+
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
