@@ -12,10 +12,13 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.MyApplication">
         <activity
+            android:name=".HistoryActivity"
+            android:exported="false" />
+        <activity
             android:name=".ResultActivity"
             android:exported="false" />
         <activity
-            android:name=".Evaluation"
+            android:name=".EvaluationActivity"
             android:exported="false" />
         <activity
             android:name=".MainActivity"

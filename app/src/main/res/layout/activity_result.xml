@@ -2,143 +2,174 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/main"
+    android:id="@+id/result_layout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:padding="16dp"  tools:context=".Evaluation">
+    android:padding="8dp"
+    tools:context=".ResultActivity"
+    android:layout_margin="20dp">
 
     <TextView
-        android:id="@+id/tv_no_01"
-        android:layout_width="wrap_content"
+        android:id="@+id/tv_score"
+        android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="01. 주변 사람들은 나를 골초라고 여긴다."
+        android:text="당신의 점수는 OOO점입니다."
+        android:textSize="24sp"
         android:textStyle="bold"
-        app:layout_constraintStart_toStartOf="parent"
+        android:gravity="center"
+        android:padding="16dp"
+        android:layout_marginTop="50dp"
         app:layout_constraintTop_toTopOf="parent"
-        />
-
-    <RadioGroup
-        android:id="@+id/rdg_01"
-        android:layout_width="0dp"  android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_no_01"
-        android:layout_marginTop="4dp">
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="HardcodedText" />
 
-        <RadioButton
-            android:id="@+id/rd_01"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="매우 그렇지 않다"
-            android:textSize="12sp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:paddingStart="4dp"  android:paddingEnd="4dp"    android:drawablePadding="0dp"
-            android:layout_weight="1"   />
+    <TextView
+        android:id="@+id/header_score"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="점수"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#E0E0E0"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.15" />
 
-        <RadioButton
-            android:id="@+id/rd_02"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="그렇지 않다"
-            android:textSize="12sp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            android:drawablePadding="0dp"
-            android:layout_weight="1"
-            />
+    <TextView
+        android:id="@+id/header_type"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="유형"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#E0E0E0"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score"
+        app:layout_constraintStart_toEndOf="@+id/header_score"
+        app:layout_constraintWidth_percent="0.25" />
 
-        <RadioButton
-            android:id="@+id/rd_03"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="보통이다"
-            android:textSize="12sp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            android:drawablePadding="0dp"
-            android:layout_weight="1"
-            />
-
-        <RadioButton
-            android:id="@+id/rd_04"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="그렇다"
-            android:textSize="12sp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            android:drawablePadding="0dp"
-            android:layout_weight="1"
-            />
-
-        <RadioButton
-            android:id="@+id/rd_05"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="매우 그렇다"
-            android:textSize="12sp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            android:drawablePadding="0dp"
-            android:layout_weight="1"
-            />
-    </RadioGroup>
+    <TextView
+        android:id="@+id/header_content"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="결과 내용"
+        android:textStyle="bold"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#E0E0E0"
+        android:layout_marginTop="20dp"
+        app:layout_constraintTop_toBottomOf="@+id/tv_score"
+        app:layout_constraintStart_toEndOf="@+id/header_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintWidth_percent="0.60" />
 
     <View
-        android:id="@+id/divider_01"
-        android:layout_width="0dp"
+        android:id="@+id/divider_header"
+        android:layout_width="match_parent"
         android:layout_height="1dp"
-        android:background="#E0E0E0"
-        android:layout_marginTop="8dp"
-        app:layout_constraintTop_toBottomOf="@id/rdg_01"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        />
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/header_score" />
 
     <TextView
-        android:id="@+id/tv_no_02"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="02. 담배가 없으면 하루를 망친다."
-        android:textStyle="bold"
-        android:layout_marginTop="8dp"
+        android:id="@+id/row1_score"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="13점 이하"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#F5F5F5"
+        app:layout_constraintTop_toBottomOf="@+id/divider_header"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/divider_01"
-        />
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintBottom_toTopOf="@+id/divider_row1" />
 
-    <RadioGroup
-        android:id="@+id/rdg_02"
+    <TextView
+        android:id="@+id/row1_type"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="니코틴\n비의존"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#F5F5F5"
+        app:layout_constraintTop_toTopOf="@+id/row1_score"
+        app:layout_constraintStart_toEndOf="@+id/row1_score"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toBottomOf="@+id/row1_score" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/row1_content_scroll"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:orientation="horizontal"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/divider_header"
+        app:layout_constraintStart_toEndOf="@+id/row1_type"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_no_02"
-        android:layout_marginTop="4dp">
+        app:layout_constraintWidth_percent="0.60">
 
-        <RadioButton
-            android:id="@+id/rd2_01"
-            android:layout_width="wrap_content"
+        <TextView
+            android:id="@+id/row1_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="매우 그렇지 않다"
-            android:textSize="12sp"
-            android:minWidth="0dp"
-            android:minHeight="0dp"
-            android:paddingStart="4dp"
-            android:paddingEnd="4dp"
-            android:drawablePadding="0dp"
-            android:layout_weight="1"
-            />
-    </RadioGroup>
+            android:text="현재 니코틴 중독으로 인한 구체적인 증상은 나타나지 않습니다. 아직은 큰 고통 없이 담배를 끊을 수 있으리라 생각됩니다. 대신 쉽게 다시 담배를 피우게 되어 결국 금연에 실패하는 경우도 많겠습니다. 장기간 담배를 피우다 보면 누구라도 심리적, 신체적 의존을 일으킵니다. 일단 의존에 빠지게 되면 자신을 조절하기 힘들어지므로 담배를 끊는 것은 쉬운 일이 되어 버립니다. 잠재적인 중독의 위험성과 건강에 해가 된다는 점을 생각하면 지금이 바로 금연을 시작해야 할 시기인 것입니다."
+            android:padding="8dp"
+            android:gravity="top" />
+    </androidx.core.widget.NestedScrollView>
+
+    <View
+        android:id="@+id/divider_row1"
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/black"
+        app:layout_constraintTop_toBottomOf="@+id/row1_content_scroll" />
+
+    <TextView
+        android:id="@+id/row2_score"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="14점 이상"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#F5F5F5"
+        app:layout_constraintTop_toBottomOf="@+id/divider_row1"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintWidth_percent="0.15"
+        app:layout_constraintBottom_toBottomOf="@+id/row2_content_scroll" />
+
+    <TextView
+        android:id="@+id/row2_type"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:text="니코틴\n의존"
+        android:gravity="center"
+        android:padding="8dp"
+        android:background="#F5F5F5"
+        app:layout_constraintTop_toTopOf="@+id/row2_score"
+        app:layout_constraintStart_toEndOf="@+id/row2_score"
+        app:layout_constraintWidth_percent="0.25"
+        app:layout_constraintBottom_toBottomOf="@+id/row2_score" />
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/row2_content_scroll"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:background="#FFFFFF"
+        app:layout_constraintTop_toBottomOf="@+id/divider_row1"
+        app:layout_constraintStart_toEndOf="@+id/row2_type"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintWidth_percent="0.60">
+
+    <TextView
+        android:id="@+id/row2_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="정도에 차이는 있겠으나 심리적, 신체적으로 니코틴에 대한 의존이 생긴 상태입니다. 니코틴은 뇌에 흡수되어 여러 가지 약리 작용을 일으키는 물질입니다. 하지만, 신경에 작용하는 약물 중에는 중독을 일으키기 쉬운 것들이 있으며, 니코틴도 예외는 아닙니다. 니코틴이 몸에서 빠져나가 니코틴 농도가 떨어지면 금단 증상을 경험하게 됩니다. '한 대만 피웠으면...' 하는 초조심은 금단 증상의 한 모습일 뿐입니다. 담배를 끊기 어려운 이유는 이처럼 금단 증상과 내 마음이 뒤섞여 버려 생활의 일부가 되어버리기 때문입니다. 갑자기 담배를 중단하면, 금단증상으로 금연을 지속하기 어려워질 수 있으므로, 니코틴 패치 등을 적절히 사용하는 것이 도움이 됩니다."
+        android:padding="8dp"
+        android:gravity="top" />
+    </androidx.core.widget.NestedScrollView>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
