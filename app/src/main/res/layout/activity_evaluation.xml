@@ -651,7 +651,6 @@
                     android:drawablePadding="0dp"
                     tools:ignore="SmallSp" />
             </RadioGroup>
-
         </androidx.constraintlayout.widget.ConstraintLayout>
     </androidx.core.widget.NestedScrollView>
 
