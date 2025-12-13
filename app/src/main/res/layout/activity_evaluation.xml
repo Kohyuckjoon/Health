@@ -689,7 +689,7 @@
         android:id="@+id/btn_save"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:text="결과 저장 보기"
+        android:text="검진 결과 보기"
         android:textStyle="bold"
         android:textSize="16sp"
         android:backgroundTint="@color/design_default_color_primary"
