@@ -12,9 +12,9 @@ import java.util.List;
 
 public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryViewHolder> {
 
-    private List<Score> scoreList;
+    private List<Integer> scoreList;
 
-    public void setScores(List<Score> list) {
+    public void setScores(List<Integer> list) {
         this.scoreList = list;
         notifyDataSetChanged();
     }
@@ -29,15 +29,14 @@ public class HistoryAdapter extends RecyclerView.Adapter<HistoryAdapter.HistoryV
 
     @Override
     public void onBindViewHolder(@NonNull HistoryAdapter.HistoryViewHolder holder, int position) {
-        Score currentScore = scoreList.get(position);
+        int currentScore = scoreList.get(position);
 
+        // 최신순 정렬 시 번호 계산
         int displayIndex = scoreList.size() - position;
-        String type = (currentScore.getFinalScore() >= 14) ? "니코틴 의존" : "니코틴 비의존";
+        String type = (currentScore >= 14) ? "니코틴 의존" : "니코틴 비의존";
 
-        String resultText = String.format("%d번 결과 - %d점 (%s)", displayIndex, currentScore.getFinalScore(), type);
-
+        String resultText = String.format("%d번 결과 - %d점 (%s)", displayIndex, currentScore, type);
         holder.scoreTextView.setText(resultText);
-
     }
 
     @Override

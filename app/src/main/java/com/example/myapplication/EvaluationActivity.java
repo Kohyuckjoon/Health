@@ -1,8 +1,9 @@
 package com.example.myapplication;
 
+import android.content.Context;
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.View;
 import android.widget.Button;
 import android.widget.RadioButton;
@@ -14,7 +15,6 @@ import androidx.appcompat.app.AppCompatActivity;
 public class EvaluationActivity extends AppCompatActivity {
 
     Button btnSave;
-    private AppDatabase db;
 
     private RadioButton rd_01_01;
     private RadioButton rd_01_02;
@@ -100,8 +100,6 @@ public class EvaluationActivity extends AppCompatActivity {
         EdgeToEdge.enable(this);
         setContentView(R.layout.activity_evaluation);
 
-        db = AppDatabase.getDatabase(this);
-
         rd_01_01 = findViewById(R.id.rd_01_01); // 5점
         rd_01_02 = findViewById(R.id.rd_01_02); // 4점
         rd_01_03 = findViewById(R.id.rd_01_03); // 3점
@@ -138,15 +136,13 @@ public class EvaluationActivity extends AppCompatActivity {
         rd_06_04 = findViewById(R.id.rd_06_04); // 2점
         rd_06_05 = findViewById(R.id.rd_06_05); // 1점
 
-
-
         btnSave = findViewById(R.id.btn_save);
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 int finalScore = calculate(); // 점수 계산 로직
 
-                saveDatabase(finalScore); // DB에 점수 저장
+                saveToPreferences(finalScore); // Preferences 사용하여 점수 저장
 
                 // 결과화면으로 이동 + 합산 데이터 넘기기
                 Intent intent = new Intent(EvaluationActivity.this, ResultActivity.class);
@@ -156,27 +152,24 @@ public class EvaluationActivity extends AppCompatActivity {
         });
     }
 
-    private void saveDatabase(final int score) {
-        new Thread(new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Score newScore = new Score(score);
+    private void saveToPreferences(int score) {
+        SharedPreferences pref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        SharedPreferences.Editor editor = pref.edit();
 
-                    // 데이터 베이스에 삽입(Table 없으면 생성)
-                    db.scoreDao().insert(newScore);
+        // 기존 데이터 불러오기 (쉼표로 구분된 문자열)
+        String savedScores = pref.getString("score_list", "");
 
-                    runOnUiThread(new Runnable() {
-                        @Override
-                        public void run() {
-                            Toast.makeText(EvaluationActivity.this, "점수가 저장되었습니다.", Toast.LENGTH_SHORT).show();
-                        }
-                    });
-                } catch (Exception e) {
-                    Toast.makeText(EvaluationActivity.this, "점수 저장 실패.", Toast.LENGTH_SHORT).show();
-                }
-            }
-        }).start();
+        // 새 점수 추가 (예: "15,20,10,")
+        if (savedScores.isEmpty()) {
+            savedScores = String.valueOf(score);
+        } else {
+            savedScores = savedScores + "," + score;
+        }
+
+        editor.putString("score_list", savedScores);
+        editor.apply();
+
+        Toast.makeText(this, "점수가 저장되었습니다.", Toast.LENGTH_SHORT).show();
     }
 
     private int calculate() {
@@ -297,7 +290,6 @@ public class EvaluationActivity extends AppCompatActivity {
                 + number_05_01 + number_05_02 + number_05_03 + number_05_04 + number_05_05
                 + number_06_01 + number_06_02 + number_06_03 + number_06_04 + number_06_05;
 
-        Log.e("khj", "test_01 ---> " + sum);
         return sum;
     }
 }
